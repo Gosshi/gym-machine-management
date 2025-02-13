@@ -1,0 +1,59 @@
+# Node.js / Next.js (フロントエンド)
+frontend/node_modules/
+frontend/.next/
+frontend/.turbo/
+frontend/out/
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.production.local
+frontend/.env.test.local
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/.pnp
+frontend/.pnp.js
+
+# Go (バックエンド)
+backend/bin/
+backend/pkg/
+backend/tmp/
+backend/.env
+backend/.DS_Store
+backend/go.sum
+backend/go.mod
+backend/debug/
+backend/logs/
+backend/cache/
+
+# macOS / Windows 特有の不要ファイル
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+
+# Docker関連
+docker-compose.override.yml
+backend/docker/db-data/
+
+# データベース
+backend/docker/db-data/
+
+# バックエンド
+backend/logs/
+backend/cache/
+backend/debug/
+backend/tmp/
