@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS manufacturers (
-    id VARCHAR(15) PRIMARY KEY,       -- ランダム生成 ID（NanoID など）
-    name VARCHAR(255) NOT NULL UNIQUE, -- メーカー名（前方一致検索用に INDEX 追加）
+    manufacturer_id VARCHAR(15) PRIMARY KEY,       -- ランダム生成 ID（NanoID など）
+    name VARCHAR(512) NOT NULL UNIQUE, -- メーカー名（前方一致検索用に INDEX 追加）
     deleted_at TIMESTAMP NULL,        -- 論理削除（NULL: 有効, 日付: 削除）
     official_website TEXT,            -- 公式サイト URL
     description TEXT,                 -- メーカーの説明
