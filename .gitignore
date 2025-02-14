@@ -57,9 +57,3 @@ backend/logs/
 backend/cache/
 backend/debug/
 backend/tmp/
-
-# ドキュメント
-docs/database-schema.md
-
-# DDL
-backend/ddl/
