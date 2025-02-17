@@ -54,6 +54,8 @@
 
 #### **レスポンス**
 
+メーカーごとのユニークな ID を返却します
+
 ##### **成功時**
 
 ```json
@@ -62,7 +64,7 @@
 
 ```json
 {
-  "manufacturer_id": "x7s9k8a4h1d2f3"
+  "manufacturer_id": "V1StGXR8_Z5jdHi6B-myd"
 }
 ```
 
