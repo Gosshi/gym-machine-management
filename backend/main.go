@@ -3,11 +3,6 @@ package main
 import (
 	"log"
 	"github.com/gofiber/fiber/v2"
-
-    "github.com/gin-gonic/gin"
-	_ "github.com/gosshi/gym-machine-management/backend/docs" // Swagger のドキュメントをインポート
-	swaggerFiles "github.com/swaggo/files"
-	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
 func main() {

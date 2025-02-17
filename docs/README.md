@@ -9,3 +9,7 @@
 - [API 設計](api-design.md)
 - [UI ワイヤーフレーム](ui-wireframe.md)
 - [将来的な拡張計画](future-plans.md)
+
+
+Go の import 文はプロジェクトの module path に基づいて解決されるため、
+backend/ の相対パスではなく、Go モジュールのルート (github.com/gosshi/gym-machine-management) からのパスで指定する必要があります。
