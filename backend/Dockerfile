@@ -1,25 +1,28 @@
-# Go の公式イメージを使用
-FROM golang:1.20
+# Stage 1: ビルド環境
+FROM golang:1.22 AS build
 
-# 作業ディレクトリを設定
+# /go/bin にインストールされたバイナリを使うために PATH を更新
+ENV PATH=$PATH:/go/bin
+
 WORKDIR /app
 
-# 必要なツールをインストール
-RUN go install github.com/swaggo/swag/cmd/swag@latest
-
-# go.mod と go.sum をコピー
+# go.mod と go.sum を先にコピーして依存関係のキャッシュを利用
 COPY go.mod go.sum ./
 RUN go mod tidy
 
-# ソースコードをコピー
+# swag ツールを最新でインストール（バージョン指定は不要）
+RUN go install github.com/swaggo/swag/cmd/swag@latest
+
+# アプリケーションのソースコードをコピー
 COPY . .
 
-# Swagger ドキュメントを生成
-RUN swag init
+RUN go mod tidy
 
+# Swagger ドキュメントを生成（必要に応じて --parseDependency, --parseInternal オプションなどを付与）
+RUN /go/bin/swag init --parseDependency --parseInternal
 
-# ビルド
+# アプリケーションをビルド（エントリーポイントは main.go と仮定）
 RUN go build -o app main.go
 
-# 実行
-CMD ["/app/app"]
+# コンテナ起動時にアプリケーションを実行
+CMD ["./app"]

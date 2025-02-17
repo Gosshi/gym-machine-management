@@ -2,18 +2,26 @@ package main
 
 import (
 	"log"
-	"github.com/gofiber/fiber/v2"
+	"net/http"
+
+	"github.com/gin-gonic/gin"
+	_ "github.com/gosshi/gym-machine-management/docs" // swag によって生成される docs パッケージ
+
+	ginSwagger "github.com/swaggo/gin-swagger"
+	swaggerFiles "github.com/swaggo/files"
 )
 
 func main() {
-	// Fiber の初期化
-	app := fiber.New()
+	r := gin.Default()
 
+	// Swagger UI を /swagger/*any で提供
+	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
-	// サーバーの起動
-	port := ":8080"
-	log.Println("🚀 Server is running on port", port)
-	if err := app.Listen(port); err != nil {
-		log.Fatal("❌ Failed to start server:", err)
-	}
+	// API エンドポイントの例
+	r.GET("/api/v1/hello", func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{"message": "Hello, world!"})
+	})
+
+	log.Println("Server started at :8080")
+	r.Run(":8080")
 }
