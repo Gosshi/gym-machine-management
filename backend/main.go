@@ -3,16 +3,17 @@ package main
 import (
 	"log"
 	"github.com/gofiber/fiber/v2"
-	"github.com/gosshi/gym-machine-management/docs" // ここで `docs` を import
-	"github.com/gofiber/swagger"
+
+    "github.com/gin-gonic/gin"
+	_ "github.com/gosshi/gym-machine-management/docs" // Swagger のドキュメントをインポート
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
 func main() {
 	// Fiber の初期化
 	app := fiber.New()
 
-	// Swagger のエンドポイントを追加
-	app.Get("/swagger/*", swagger.HandlerDefault)
 
 	// サーバーの起動
 	port := ":8080"

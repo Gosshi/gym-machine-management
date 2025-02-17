@@ -1,11 +1,7 @@
+# Go の公式イメージを使用
 FROM golang:1.20
 
-ENV GOPRIVATE=github.com/gosshi/gym-machine-management
-
-# 依存パッケージを取得
-RUN git config --global url."git@github.com:".insteadOf "https://github.com/"
-RUN go install github.com/gosshi/gym-machine-management@latest
-
+# 作業ディレクトリを設定
 WORKDIR /app
 
 # 必要なツールをインストール
@@ -18,11 +14,12 @@ RUN go mod tidy
 # ソースコードをコピー
 COPY . .
 
-
 # Swagger ドキュメントを生成
 RUN swag init
+
 
 # ビルド
 RUN go build -o app main.go
 
+# 実行
 CMD ["/app/app"]
