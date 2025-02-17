@@ -1,18 +1,23 @@
 package main
 
 import (
-    "github.com/gofiber/fiber/v2"
+	"log"
+	"github.com/gofiber/fiber/v2"
+	"github.com/gosshi/gym-machine-management/docs" // ここで `docs` を import
+	"github.com/gofiber/swagger"
 )
 
 func main() {
-    // Fiber のインスタンスを作成
-    app := fiber.New()
+	// Fiber の初期化
+	app := fiber.New()
 
-    // ルートエンドポイントの定義
-    app.Get("/", func(c *fiber.Ctx) error {
-        return c.SendString("Hello, Fiber!")
-    })
+	// Swagger のエンドポイントを追加
+	app.Get("/swagger/*", swagger.HandlerDefault)
 
-    // サーバーをポート3000で起動
-    app.Listen(":3000")
+	// サーバーの起動
+	port := ":8080"
+	log.Println("🚀 Server is running on port", port)
+	if err := app.Listen(port); err != nil {
+		log.Fatal("❌ Failed to start server:", err)
+	}
 }
