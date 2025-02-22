@@ -10,6 +10,13 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
     steps:
+      - name: Debug: List repository root
+        run: ls -la
+      - name: Debug: List backend directory
+        run: |
+          cd backend
+          ls -la
+
       - name: Checkout repository
         uses: actions/checkout@v3
 
