@@ -21,6 +21,9 @@ RUN go mod tidy
 # Swagger ドキュメントを生成（必要に応じて --parseDependency, --parseInternal オプションなどを付与）
 RUN /go/bin/swag init --parseDependency --parseInternal
 
+# テストを実行
+RUN go test -v ./...
+
 # アプリケーションをビルド（エントリーポイントは main.go と仮定）
 RUN go build -o app main.go
 

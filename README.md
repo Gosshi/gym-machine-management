@@ -38,7 +38,7 @@ http://localhost:3000
 
 ---
 
-### 4️⃣ バックエンドセットアップ (Go + Fiber)
+### 4️⃣ バックエンドセットアップ (Go + Gin)
 
 ```sh
 cd backend
