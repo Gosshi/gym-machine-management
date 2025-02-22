@@ -66,4 +66,5 @@ jobs:
           context: backend
           file: backend/Dockerfile
           push: true
-          tags: your-dockerhub-username/gym-machine-management:latest
+          tags: gosshi/gym-machine-management:latest
+          
