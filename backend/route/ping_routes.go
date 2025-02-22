@@ -1,8 +1,8 @@
 package route
 
 import (
-	"github.com/gin-gonic/gin"
-	"github.com/gosshi/gym-machine-management/backend/controller"
+    "net/http"
+    "github.com/gin-gonic/gin"
 )
 
 // PingHandler シンプルなヘルスチェック API
@@ -13,9 +13,11 @@ import (
 // @Success 200 {object} map[string]string "サーバーの状態を返す"
 // @Router /ping [get]
 // PingRoutes Ping API のルート設定
-func PingRoutes(app *fiber.App) {
-    app.Get("/ping", func(c *fiber.Ctx) error {
-        return c.JSON(fiber.Map{"message": "pong"})
-    })
+func PingRoutes(r *gin.Engine) {
+    r.GET("/ping", Ping)
+}
+
+func Ping(c *gin.Context) {
+    c.JSON(http.StatusOK, gin.H{"message": "pong"})
 }
 

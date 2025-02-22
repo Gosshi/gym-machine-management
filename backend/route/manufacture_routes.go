@@ -1,10 +1,10 @@
 package route
 
 import (
-    "github.com/gofiber/fiber/v2"
+    "github.com/gin-gonic/gin"
     "github.com/gosshi/gym-machine-management/backend/controller"
 )
 
-func ManufacturerRoutes(app *fiber.App) {
-    app.Post("/manufacturers", controller.CreateManufacturer)
+func ManufacturerRoutes(r *gin.Engine) {
+    r.POST("/manufacturers", controller.CreateManufacturer)
 }

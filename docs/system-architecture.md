@@ -3,7 +3,7 @@
 ## 🔹 技術スタック
 
 - **フロントエンド**：Next.js（React, TypeScript）
-- **バックエンド**：Go（Fiber）
+- **バックエンド**：Go（Gin）
 - **データベース**：PostgreSQL
 - **認証**：Amazon Cognito（JWT）
 - **デプロイ**：AWS（Lambda, RDS）
@@ -12,7 +12,7 @@
 
 ## 📌 コンポーネント構成
 
-- **API サーバー**（Go + Fiber）
+- **API サーバー**（Go + Gin）
   - ルーティング、認証、データ管理
 - **データベース**（PostgreSQL）
   - ジム・マシン・ユーザーの情報を管理

@@ -1,12 +1,9 @@
 package route
 
 import (
-    "github.com/gofiber/fiber/v2"
-    "github.com/gosshi/gym-machine-management/backend/route/pingRoutes"
-
+   "github.com/gin-gonic/gin"
 )
 
-func SetupRoutes(app *fiber.App) {
-    pingRoutes.PingRoutes(app)
-
+func SetupRoutes(r *gin.Engine) {
+    PingRoutes(r)
 }
