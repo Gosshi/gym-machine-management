@@ -31,17 +31,17 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd gym-machine-management/backend
+          cd ../gym-machine-management/backend
           go mod tidy
 
       - name: Run tests
         run: |
-          cd gym-machine-management/backend
+          cd ../gym-machine-management/backend
           go test -v ./...
 
       - name: Build the application
         run: |
-          cd gym-machine-management/backend
+          cd ../gym-machine-management/backend
           go build -o app main.go
 
   docker-build:
