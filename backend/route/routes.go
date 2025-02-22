@@ -2,8 +2,11 @@ package route
 
 import (
     "github.com/gofiber/fiber/v2"
+    "github.com/gosshi/gym-machine-management/backend/route/pingRoutes"
+
 )
 
 func SetupRoutes(app *fiber.App) {
-    ManufacturerRoutes(app) // メーカー関連のルートを登録
+    pingRoutes.PingRoutes(app)
+
 }
