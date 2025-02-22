@@ -19,8 +19,6 @@ backend/pkg/
 backend/tmp/
 backend/.env
 backend/.DS_Store
-backend/go.sum
-backend/go.mod
 backend/debug/
 backend/logs/
 backend/cache/
@@ -57,9 +55,3 @@ backend/logs/
 backend/cache/
 backend/debug/
 backend/tmp/
-
-# ドキュメント
-docs/database-schema.md
-
-# DDL
-backend/ddl/
