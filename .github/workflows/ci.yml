@@ -10,12 +10,6 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
     steps:
-      - name: List repository root
-        run: ls -la
-      - name: List backend directory
-        run: |
-          cd ../
-          ls -la
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
@@ -37,17 +31,17 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd backend
+          cd gym-machine-management/backend
           go mod tidy
 
       - name: Run tests
         run: |
-          cd backend
+          cd gym-machine-management/backend
           go test -v ./...
 
       - name: Build the application
         run: |
-          cd backend
+          cd gym-machine-management/backend
           go build -o app main.go
 
   docker-build:
