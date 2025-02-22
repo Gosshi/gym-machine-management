@@ -4,8 +4,8 @@ import (
 	"log"
 
 	"github.com/gin-gonic/gin"
-	_ "github.com/gosshi/gym-machine-management/docs" // swag によって生成される docs パッケージ
-	"github.com/gosshi/gym-machine-management/route"
+	_ "github.com/gosshi/gym-machine-management/backend/docs" // swag によって生成される docs パッケージ
+	"github.com/gosshi/gym-machine-management/backend/route"
 
 	ginSwagger "github.com/swaggo/gin-swagger"
 	swaggerFiles "github.com/swaggo/files"

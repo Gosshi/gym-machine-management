@@ -2,7 +2,7 @@ package controller
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/gosshi/gym-machine-management/model"
+	"github.com/gosshi/gym-machine-management/backend/model"
 	"github.com/matoous/go-nanoid/v2"
 )
 

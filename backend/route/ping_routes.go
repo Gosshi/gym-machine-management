@@ -2,7 +2,7 @@ package route
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/gosshi/gym-machine-management/controller"
+	"github.com/gosshi/gym-machine-management/backend/controller"
 )
 
 // PingHandler シンプルなヘルスチェック API
