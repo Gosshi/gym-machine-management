@@ -32,7 +32,6 @@ jobs:
       - name: Install dependencies
         run: |
           cd ../gym-machine-management/backend
-          ls -la
           go mod tidy
 
       - name: Run tests
