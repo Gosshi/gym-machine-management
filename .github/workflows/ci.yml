@@ -16,7 +16,6 @@ jobs:
         run: |
           cd backend
           ls -la
-
       - name: Checkout repository
         uses: actions/checkout@v3
 
